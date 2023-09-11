@@ -8,18 +8,7 @@ int solution(string input) {
     string num = "";
     string word = "";
     int answer = 0;
-    vector<string> nums;
-    nums.resize(10);
-    nums[0] = "zero";
-    nums[1] = "one";
-    nums[2] = "two";
-    nums[3] = "three";
-    nums[4] = "four";
-    nums[5] = "five";
-    nums[6] = "six";
-    nums[7] = "seven";
-    nums[8] = "eight";
-    nums[9] = "nine";
+    vector<string> nums = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     
     for (int i = 0; i < input.size(); i++)
     {
