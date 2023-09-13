@@ -1,48 +1,28 @@
 using System;
 using System.Collections.Generic;
-
-namespace Ninza_Class
+class A
 {
-    internal class Program
+    static void Main()
     {
-        private static Dictionary<string, int> intContainer = new Dictionary<string, int>();
-        private static Dictionary<int, string> stringContainer = new Dictionary<int, string>();
-        
-        static void Main(string[] args)
-        {
-            string[] arr = Console.ReadLine().Split();
-            int[] iarr = Array.ConvertAll(arr, int.Parse);
-            string[] pArr = new string[iarr[0]];
-
-            for(int i = 0; i<iarr[0]; i++)
-            {
-                pArr[i] = Console.ReadLine();
-            }
-
-            for(int i = 0; i < iarr[0]; i++)
-            {
-                stringContainer.Add(i, pArr[i]);
-                intContainer.Add(stringContainer[i], i);
-            }
-
-            string[] check = new string[iarr[1]];
-            int result = 0;
-            for(int i=0; i<iarr[1]; i++)
-            {
-                check[i] = Console.ReadLine();
-            }
-
-            for(int i = 0; i < iarr[1]; i++)
-            {
-                if(int.TryParse(check[i], out result))
-                {
-                    Console.WriteLine(stringContainer[result-1]);
-                }
-                else
-                {
-                    Console.WriteLine($"{intContainer[check[i]] + 1}");
-                }
-            }
+        Dictionary<int, string> a = new Dictionary<int, string>();
+        Dictionary<string, int> b = new Dictionary<string, int>();
+        string[] inputint = Console.ReadLine().Split(' ');
+        int D = int.Parse(inputint[0]);
+        int Q = int.Parse(inputint[1]);
+        string[] inputQ = new string[Q];
+        string s;
+        int i;
+        for(i = 1; i <= D; i++){
+            s = Console.ReadLine();
+            a.Add(i, s);
+            b.Add(s, i);
+        }
+        for(i = 0; i < Q; i++){
+            inputQ[i] = Console.ReadLine();
+        }
+        for(i = 0; i < Q; i++){
+            if (int.TryParse(inputQ[i], out D)) Console.WriteLine(a[D]);
+            else Console.WriteLine(b[inputQ[i]].ToString());
         }
     }
 }
