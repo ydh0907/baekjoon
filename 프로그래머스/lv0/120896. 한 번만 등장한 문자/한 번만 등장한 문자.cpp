@@ -3,15 +3,14 @@
 
 using namespace std;
 
-string solution(string s) {
+string solution(string str) {
     string answer = "";
-    vector<int> nums;
-    nums.resize(26, 0);
-    for(int i = 0; i < s.length(); i++){
-        nums[s[i] - 'a']++;
+    vector<int> a = vector<int>(26);
+    for (int i = 0; i < str.size(); i++) {
+        a[str[i] - 'a']++;
     }
-    for(int i = 0; i < nums.size(); i++){
-        if(nums[i] == 1) answer += 'a' + i;
+    for (int i = 0; i < 26; i++) {
+        if (a[i] == 1) answer += (char)('a' + i);
     }
     return answer;
 }
