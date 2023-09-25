@@ -3,13 +3,12 @@
 
 using namespace std;
 
-int solution(int min, int max, int find) {
-    int answer = 0;
-    for(int i = min; i <= max; i++){
-        int temp = i;
-        for(temp; temp >= 1; temp /= 10){
-            if(temp % 10 == find) answer ++;
+int solution(int i, int j, int k) {
+    int count = 0;
+    for (int a = i; a <= j; a++) {
+        for (int temp = a; temp >= 1; temp /= 10) {
+            if (k == temp % 10) count++;
         }
     }
-    return answer;
+    return count;
 }
