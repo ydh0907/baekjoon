@@ -16,7 +16,7 @@ int main() {
 			if (c == '(') ++flag;
 			else --flag;
 			if (flag < 0)
-				flag = -1000;
+				break;
 		}
 
 		if (flag == 0) cout << "YES" << endl;
