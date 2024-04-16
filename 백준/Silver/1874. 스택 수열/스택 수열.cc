@@ -9,7 +9,6 @@ int main() {
 	string out;
 	stack<int> s;
 	int next = 1;
-	int last = 0;
 
 	for (int i = 0; i < num; i++) {
 		int input;
