@@ -24,7 +24,6 @@ int main() {
 			cin >> b[i];
 
 		sort(a.begin(), a.end());
-		sort(b.begin(), b.end());
 
 		for (int i = 0; i < findSize; i++) {
 			int up = upper_bound(a.begin(), a.end(), b[i]) - a.begin();
